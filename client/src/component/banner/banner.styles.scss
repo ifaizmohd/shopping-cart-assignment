@@ -1,0 +1,57 @@
+@import "../../assets/stylesheets/variables";
+
+.banner {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  max-height: calc(100% / 5);
+  border-bottom: 1px solid $navigation-border-color;
+  gap: 25%;
+
+  .banner-image {
+    display: flex;
+    flex-flow: row wrap;
+    width: calc(100% / 5);
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .categories-container {
+    flex: 2 1;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
+
+  p {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: $phones) {
+  .banner {
+    gap: 0;
+  }
+  .banner-image {
+    width: calc(100% / 2) !important;
+  }
+  .image {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: $phones) and (max-width: $tablets) {
+  .banner {
+    gap: 12%;
+  }
+  .banner-image {
+    width: calc(100% / 3) !important;
+  }
+  .image {
+    width: 100%;
+  }
+}

@@ -1,0 +1,143 @@
+// $phones: 480px;
+// $tablets: 768px;
+
+@import "../../assets/stylesheets/variables";
+
+.navigation-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $navigation-border-color;
+  box-shadow: 5px 5px 5px $navigation-border-color;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100px;
+  z-index: 100;
+  background-color: $background-color;
+}
+
+.sidebar-toggle {
+  display: none;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  padding: 0;
+  margin: 0;
+  flex: 3 3;
+  height: 54px;
+}
+
+.logo {
+  cursor: pointer;
+  width: 10%;
+  margin: 0 2em 0 2em;
+
+  img {
+    width: 100%;
+  }
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 5px;
+  color: gray;
+
+  &:hover {
+    color: rgb(73, 73, 73);
+  }
+}
+
+.cart-icon-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1 1;
+}
+
+.nav-links-condensed {
+  list-style-type: none;
+  display: flex;
+  flex: 1 1 24px;
+  margin: 0;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0;
+
+  &:hover {
+    color: $cart-icon-hover;
+  }
+}
+
+.cart-icon {
+  display: flex;
+  align-items: center;
+  flex: 2 1 40px;
+  background-color: $cart-icon-bg-color;
+  padding: 1em 1.5em 1em 1.5em;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $cart-icon-hover;
+    color: $background-color;
+  }
+}
+
+.cart-icon-style {
+  width: 1.5em;
+  height: 1.5em;
+}
+
+@media screen and (max-width: $phones) {
+  .logo {
+    width: 20%;
+    flex: 0.5;
+  }
+  .sidebar-toggle {
+    display: flex;
+    font-size: 1.5em;
+    margin-left: 5px;
+    font-weight: bold;
+
+    &.left {
+      transform: rotate(180deg);
+      transition: transform 0.5s linear;
+    }
+
+    &.right {
+      transform: rotate(0deg);
+      transition: transform 0.5s linear;
+    }
+  }
+
+  .nav-bar {
+    display: none;
+  }
+
+  .nav-links-condensed {
+    display: none;
+  }
+  .cart-icon {
+    flex: 1 1 100%;
+  }
+}
+
+@media screen and (min-width: $phones) and (max-width: $tablets) {
+  .logo {
+    width: 20%;
+  }
+}
